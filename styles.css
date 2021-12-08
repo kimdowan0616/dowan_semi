@@ -41,7 +41,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 26, 188, 156;
+  --bs-primary-rgb: 204, 229, 255;
   --bs-secondary-rgb: 98, 98, 226;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -237,7 +237,7 @@ sup {
 
 a {
   color: #1abc9c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: #15967d;
@@ -299,7 +299,7 @@ figure {
 
 img,
 svg {
-  vertical-align: middle;
+ /*  vertical-align: middle; */
 }
 
 table {
@@ -599,17 +599,10 @@ progress {
   content: "— ";
 }
 
-/* 직접추가 */
-/* 마우스 오버 이미지 확대 */
 .img-fluid {
   max-width: 100%;
-  height: auto;
-  transform: scale(1);
-  transition: all 0.3s ease-in-out;
-}
-
-.img-fluid:hover {
-  transform: scale(1.2);
+  border-radius: 1.5rem;
+  
 }
 
 .img-thumbnail {
@@ -678,7 +671,7 @@ progress {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap;	/* 요소가 부모보다 크면 아래로 줄 넘겨서 정렬 직접추가*/
+  flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
@@ -2457,11 +2450,12 @@ textarea.form-control-lg {
 }
 
 .form-select-sm {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.5rem;
+  padding-top: 0.3rem; /* 변경 */
+  padding-bottom: 0.3rem; /* 변경 */
+  padding-left: 0.3rem;
   font-size: 0.875rem;
   border-radius: 0.25rem;
+  margin-right: 10px; /* 추가 */
 }
 
 .form-select-lg {
@@ -3498,6 +3492,7 @@ textarea.form-control-lg {
 }
 
 .btn-sm, .btn-group-sm > .btn {
+	color: #8080c0;
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.25rem;
@@ -3772,9 +3767,10 @@ textarea.form-control-lg {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.25rem 1rem;
+  padding: 1rem 1rem;
   clear: both;
-  font-weight: 400;
+  font-weight: 1000;
+  font-size:1.1rem;
   color: #212529;
   text-align: inherit;
   text-decoration: none;
@@ -7327,7 +7323,7 @@ textarea.form-control-lg {
 }
 
 .mt-4 {
-  margin-top: 1.5rem !important;
+  margin-top: 0.5rem !important;
 }
 
 .mt-5 {
@@ -11303,7 +11299,7 @@ html {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 3rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -11368,7 +11364,7 @@ html {
   padding-bottom: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 #mainNav .navbar-brand {
   color: #fff;
@@ -11442,7 +11438,7 @@ html {
 }
 
 .masthead {
-  padding-top: calc(6rem + 74px);
+  padding-top: calc(5rem + 74px);
   padding-bottom: 6rem;
 }
 .masthead .masthead-heading {
@@ -11458,7 +11454,6 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
@@ -11473,9 +11468,10 @@ html {
   cursor: pointer;
   position: relative;
   display: block;
-  max-width: 25rem;
+  max-width: 22rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  text-align: center;
 }
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
@@ -11509,8 +11505,8 @@ html {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: #2c3e50;
   color: #fff;
 }
@@ -11560,151 +11556,27 @@ html {
 	text-align: center;
 }
 
-.item{
-	width: 322.5px;
+#services {
+	background-color: rgba(96,125,139,0.1);
+}
+#services .divider {
+	width: 30%;
+	margin: 2rem auto;
+	border-top:0.5rem solid rgb(255, 112,3);
 }
 
-.item-desc{
-	width: 322.5px;
-	left: 30px;
+#services .services-col .card {
+	transition: 0.4s ease;
 }
 
-.brand{
-	font-size: 0.8em;
+#services .services-col .card:hover {
+	transform:translateY(-0.8rem);
+	box-shadow: 0 5px 11 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.price-info{
-	font-weight: bold;
-	font-size: 1.5em;
-	float: left;
-	width: 55%;
-}
-.price-original{
-	float: left;
-	width: 40%;
-	color: #808080;
-	font-size: 1.3em;
-	text-decoration: line-through;
+#services .services-col img {
+	height: 13rem;
+	object-fit: cover;
+	object-position: center;
 }
 
-.discount{
-	color: red;
-}
-
-.slide {
-  width: 800px;
-  height: 320px;
-  position: relative;
-  overflow: hidden;
-  /*영역 밖으로 튀어나온 오브젝트는 숨긴다.*/
-}
-
-.imgSlide {
-  width: 4800px;
-  left: -2400px;
-  /* 이미지 크키 X 이미지 개수 */
-  height: 320px;
-  position: relative;
-  z-index: 1;
-}
-
-.imgSlide li {
-  float: left;
-  /*이미지를 옆으로 나열시킨다.*/
-}
-
-.imgSlide img {
-  width: 800px;
-}
-
-.moveBtn {
-  width: 800px;
-  color: white;
-  top: 35%;
-  position: absolute;
-  z-index: 2;
-  font-size: 60px;
-}
-
-.moveBtn .pre {
-  float: left;
-  margin-left: 10px;
-}
-
-.moveBtn .next {
-  float: right;
-  margin-right: 10px;
-}
-
-#wrap	{
-	width: 1100px;
-	margin: 0 auto;
-}
-	
-#container	{
-	/*clear: both;*/
-	width:96%;margin: 0 auto;
-
-	overflow: auto;
-	background: white;
-	}
-	
-/* contents */
-#container #contents	{
-	float: left;
-	background: #fff;
-	width: 90.0%;
-	/*position: relative;*/
-	padding: 1% 0 5% 0; 
-	}
-
-/* centerCon */
-#container #contents #centerCon	{
-	clear: both;
-	padding: 3% 2% 0 1%;
-	float: left;
-	width: 65%;
-	}
-	
-/* rightCon */
-#container #contents #rightCon	{
-	float: right;
-	padding: 0 0 0 1.5%;
-	width: 30.5%;
-	line-height: 1.5;
-	padding-top: 30px;
-}
-#rightCon div{
-	padding-top: 5px;
-}
-
-#btnId:hover{
-	color: white;
-	background: blue;
-}
-	
-.image {
-	display: none;
-}
-
-.price-info-detail{
-	margin-top: 30px;
-	font-size: 2.0em;
-}
-
-.button__row {
-  height: 50px;
-  margin: 10px;
-}
-.button__row > button {
-	width: 120px;
-	height: 50px;
-	border-radius: 5px;
-	cursor: pointer;
-	outline: none;
-	background-color: #ffa9a9;
-}
-
-.button__row > button:hover {
-  background-color: #FC7174;
-}
